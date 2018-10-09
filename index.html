@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HERIMANDIMBY Naomi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div>
+        <h1>
+            HERIMANDIMBY Naomi
+        </h1>
+    </div>
+
+            <button class ="collapsible"><h1>Etudes</h1></button>
+            <div class="row">
+                <div class="column">
+                    <p>Baccalauréat Economique et Social</p>
+                    <p>Première année licence informatique</p>
+                    <p>DUT Réseaux et Télécommunications</p>
+                </div>
+                <div class="column">
+                    <p>Lycée Champollion Grenoble</p>
+                    <p>Université Joseph Fourrier</p>
+                    <p>IUT 1 Campus Saint Martin d'Hères</p>
+                </div>
+                <div class="column">
+                    <p>2014</p>
+                    <p>2014-2015</p>
+                    <p>2015-2018</p>
+                </div>
+            </div>
+
+        <button class ="collapsible"><h1>Expériences professionnelles</h1></button>
+            <div class="row">
+                <div class="column">
+                    <p>Stages en architecture</p>
+                    <p>Hotesse de caisse</p>
+                    <p>Alternance développeuse</p>
+                </div>
+                <div class="column">
+                    <p>Logic'arch/Cabinet Frédérick Lely</p>
+                    <p>Monoprix Grenoble</p>
+                    <p>88 it Grenoble</p>
+                </div>
+                <div class="column">
+                    <p>2011/2013</p>
+                    <p>2016-2017</p>
+                    <p>2017-2018</p>
+                </div>
+            </div>
+        <button class ="collapsible"><h1>Compétences techniques</h1></button>
+            <div class="row">
+                <div class="column">
+                    <p>Stages en architecture</p>
+                    <p>Hotesse de caisse</p>
+                    <p>Alternance développeuse</p>
+                </div>
+                <div class="column">
+                    <p>Logic'arch/Cabinet Frédérick Lely</p>
+                    <p>Monoprix Grenoble</p>
+                    <p>88 it Grenoble</p>
+                </div>
+                <div class="column">
+                    <p>2011/2013</p>
+                    <p>2016-2017</p>
+                    <p>2017-2018</p>
+                </div>
+            </div>
+
+        <button type="button" onclick="mode()">Changer de mode</button>
+
+        <script>
+        function mode() {
+            var color = document.body.style.color; 
+            var backgroundColor = document.body.style.backgroundColor;
+    
+            if (color == "black" && backgroundColor == "white") {
+                document.body.style.color="white";
+                document.body.style.backgroundColor="black";
+            } else {
+                document.body.style.color="black";
+                document.body.style.backgroundColor="white";
+            }
+        }
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+            for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display == "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+            });
+            }
+        </script>
+</body>
+</html>
