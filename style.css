@@ -1,11 +1,28 @@
+@media screen and (max-width: 640px) {
+	#infos h1{
+		font-size: 1.2em;
+	}
+	#infos img{
+		width: 60px;
+	}
+}
+
 body {
 	background-color: white;
 	color:black;
+	transition: background 0.5s linear;
 }
 
-.column {
+.column1 {
     float: left;
     width: 33.33%;
+	overflow-wrap: break-word;
+}
+
+.column2 {
+	float: left;
+	width: 50%;
+	overflow-wrap: break-word;
 }
 
 .collapsible {
@@ -36,9 +53,30 @@ body {
   content: "\2212";
 }
 
+.hidden{
+	display: none;
+}
+
 .row {
   padding: 0 18px;
   max-height: 0;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+#infos h1{
+float:left;
+}
+
+#infos img{
+float:right;
 }

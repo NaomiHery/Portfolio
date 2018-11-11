@@ -10,97 +10,96 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <div>
+    <div id="infos">
         <h1>
             HERIMANDIMBY Naomi
         </h1>
+		<img src="Nao_musée (48 sur 62).jpg" id="photo"></img>
     </div>
-
+		<div>
             <button class ="collapsible"><h1>Etudes</h1></button>
-            <div class="row">
-                <div class="column">
+            <div class="row hidden">
+                <div class="column1">
                     <p>Baccalauréat Economique et Social</p>
                     <p>Première année licence informatique</p>
                     <p>DUT Réseaux et Télécommunications</p>
                 </div>
-                <div class="column">
+                <div class="column1">
                     <p>Lycée Champollion Grenoble</p>
                     <p>Université Joseph Fourrier</p>
                     <p>IUT 1 Campus Saint Martin d'Hères</p>
                 </div>
-                <div class="column">
+                <div class="column1">
                     <p>2014</p>
                     <p>2014-2015</p>
                     <p>2015-2018</p>
                 </div>
             </div>
-
         <button class ="collapsible"><h1>Expériences professionnelles</h1></button>
-            <div class="row">
-                <div class="column">
+            <div class="row hidden">
+                <div class="column1">
                     <p>Stages en architecture</p>
                     <p>Hotesse de caisse</p>
                     <p>Alternance développeuse</p>
                 </div>
-                <div class="column">
+                <div class="column1">
                     <p>Logic'arch/Cabinet Frédérick Lely</p>
                     <p>Monoprix Grenoble</p>
                     <p>88 it Grenoble</p>
                 </div>
-                <div class="column">
+                <div class="column1">
                     <p>2011/2013</p>
                     <p>2016-2017</p>
                     <p>2017-2018</p>
                 </div>
             </div>
         <button class ="collapsible"><h1>Compétences techniques</h1></button>
-            <div class="row">
-                <div class="column">
-                    <p>Stages en architecture</p>
-                    <p>Hotesse de caisse</p>
-                    <p>Alternance développeuse</p>
+            <div class="row hidden">
+                <div class="column2">
+                    <p>Langages informatique</p>
+                    <p>Administration système</p>
+                    <p>SGC/PGI</p>
+					<p>Réseaux<p>
                 </div>
-                <div class="column">
-                    <p>Logic'arch/Cabinet Frédérick Lely</p>
-                    <p>Monoprix Grenoble</p>
-                    <p>88 it Grenoble</p>
-                </div>
-                <div class="column">
-                    <p>2011/2013</p>
-                    <p>2016-2017</p>
-                    <p>2017-2018</p>
+                <div class="column2">
+                    <p>HTML, CSS, Javascript, Java, Python, XML</p>
+                    <p>Linux (Debian/CentOS), Windows</p>
+                    <p>Magento, Wordpress, Odoo</p>
+					<p>Réseaux d'entreprise, architecture réseaux, services réseaux</p>
                 </div>
             </div>
-
-        <button type="button" onclick="mode()">Changer de mode</button>
+			
+		</div>
+		<button type="button" id="mode">Changer de mode</button>
 
         <script>
-        function mode() {
-            var color = document.body.style.color; 
-            var backgroundColor = document.body.style.backgroundColor;
-    
-            if (color == "black" && backgroundColor == "white") {
-                document.body.style.color="white";
-                document.body.style.backgroundColor="black";
-            } else {
-                document.body.style.color="black";
-                document.body.style.backgroundColor="white";
-            }
-        }
-
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-            for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display == "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-            });
-            }
+		$(".collapsible").click(function(){
+			$(this).toggleClass('active')
+			let sib = $(this).next()
+			if(sib.css('display') == "block"){
+				sib.fadeOut()
+			}
+			else{
+				sib.fadeIn()
+			}
+		})
+		
+		$('#mode').click(function(){
+			let color = $('body').css('color')
+			let bgColor = $('body').css('backgroundColor')
+			
+			if(color == "rgb(255, 255, 255)" && bgColor == "rgb(0, 0, 0)"){
+				$('body').css('color',"rgb(0,0,0)")
+						.css('backgroundColor','rgb(255,255,255)')
+				$('#mode').html('Passer en mode nuit')
+			}
+			else{
+				$('body').css('color',"rgb(255,255,255)")
+						.css('background-color','rgb(0,0,0)')
+				$('#mode').html('Passer en mode jour')
+			}
+		})
+        
         </script>
 </body>
 </html>
