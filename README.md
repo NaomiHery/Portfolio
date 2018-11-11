@@ -10,3 +10,8 @@ Ceci est mon portfolio.
 * Site responsive
 * Fonctionnement du mode Jour / Nuit
 * Installation d’une librairie complémentaire fonctionnelle via npm
+* Site en ligne 
+
+## Comment installer ?
+
+* Utilisez la commande ```npm install```
